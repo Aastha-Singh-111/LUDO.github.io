@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LUDO</title>
+    <style>
+      body {
+        background-color: blanchedalmond; 
+      }
+      #result {
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-shadow: 2px 2px rgb(255, 255, 255);
+        color: blue;
+        text-align: center;
+        font-size: 30px;
+      }
+      .player1 {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: rgb(36, 237, 221);
+        text-shadow: 2px 2px rgb(0, 0, 0);
+        font-size: 40px;
+        margin: 50px, 0px;
+      }
+      .player2 {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: rgb(36, 237, 221);
+        text-shadow: 2px 2px rgb(0, 0, 0);
+        font-size: 40px;
+      }
+
+      #img1 {
+        margin: 60px, 0px, 20px, 0px;
+        height: 100px;
+        width: 100px;
+      }
+      #img2 {
+        height: 100px;
+        width: 100px;
+      }
+      .box1 {
+        float: left;
+
+      }
+      .player1{
+        float: left;
+        padding-left: 500px;
+        padding-right: 50px;
+      }
+      .player2{
+        float: left;
+      }
+      .submit_button{
+        position: absolute;
+        top: 65%;
+        left: 47vw;
+
+
+
+      }
+    </style>
+  </head>
+  <body>
+    <div id="result">
+      <h3>RESULT</h3>
+    </div>
+
+    <div class="box1">
+      <div class="player1">
+        <h6>PLAYER 1</h6>
+        <img src="images/1.jpg" id="img1">
+      </div>
+
+      <div class="player2">
+        <h6>PLAYER 2</h6>
+        <img src="images/5.jpg" id="img2"> 
+      </div>
+    </div>
+
+    <br><br>
+  <div class="submit_button">
+ <button onclick="ludogame()">SUBMIT</button>
+  </div>
+  <script>
+    function ludogame(){
+    const play1= Math.floor(Math.random()*6)+1;
+    const play1dice=`images/${play1}.jpg`;
+    document.getElementById('img1').setAttribute('src',play1dice);
+  
+  
+    const play2= Math.floor(Math.random()*6)+1;
+    const play2dice=`images/${play2}.jpg`;
+    document.getElementById('img2').setAttribute('src',play2dice);
+
+  if(play1>play2){
+    document.querySelector('h3').innerHTML="PLAYER 1 WON !!!";
+  }
+  else if(play1<play2){
+    document.querySelector('h3').innerHTML="PLAYER 2 WON !!!";
+  }
+  else{
+    document.querySelector('h3').innerHTML="DRAW !!!!";
+  }
+    }
+  </script>
+  </body>
+</html>
